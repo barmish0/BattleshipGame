@@ -1,0 +1,3 @@
+package com.example.battleshipgame.logic;
+import java.io.Serializable; import java.util.*;
+public class Ship implements Serializable { private final String name; private final int size; private final List<Integer> cells=new ArrayList<>(); private int hits; public Ship(String name,int size){this.name=name;this.size=size;} public String getName(){return name;} public int getSize(){return size;} public void addCell(int r,int c){cells.add(r*Board.SIZE+c);} public boolean contains(int r,int c){return cells.contains(r*Board.SIZE+c);} public void hit(){hits++;} public boolean isSunk(){return hits>=size;} }
