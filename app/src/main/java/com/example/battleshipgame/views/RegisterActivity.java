@@ -10,6 +10,7 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.battleshipgame.MainActivity;
+import com.example.battleshipgame.Server;
 import com.example.battleshipgame.auth.AuthErrors;
 import com.example.battleshipgame.ui.Ui;
 import com.google.firebase.auth.FirebaseAuth;
@@ -27,7 +28,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     @Override protected void onCreate(Bundle state){
         super.onCreate(state);
-        auth=FirebaseAuth.getInstance();
+        auth=Server.auth(this); // talk to the local Firebase emulator
 
         LinearLayout page=Ui.page(this);
         page.setGravity(Gravity.CENTER_HORIZONTAL);
